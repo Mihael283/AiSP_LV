@@ -75,10 +75,12 @@ void sort(float V[], int n) {
 }
 
 
-int bin_pret(float V[], int l, int n, float x)
+int bin_pret(float V[], int n, float x)
 {
-	if (n >= l) {
-		int mid = l + (n - l) / 2;
+	int l = 0;
+	int r = n - 1;
+	if (r >= l) {
+		int mid = l + (r - l) / 2;
 
 		if (V[mid] == x)
 			return mid;
@@ -86,7 +88,7 @@ int bin_pret(float V[], int l, int n, float x)
 		if (V[mid] > x)
 			return bin_pret(V, l, mid - 1, x);
 
-		return bin_pret(V, mid + 1, n, x);
+		return bin_pret(V, mid + 1, r, x);
 	}
  
 	return -1;
@@ -116,7 +118,7 @@ int main(void)
 	printf("Vrijeme za heap sort : %dms\n", vrijeme2 - vrijeme1);
 
 	vrijeme1 = clock();
-	bin_pret(arr, 0, n , 101.3123231);
+	bin_pret(arr, n, 101.3123231);
 	vrijeme2 = clock();
 	printf("Vrijeme za binary search : %dms\n", vrijeme2 - vrijeme1);
 
