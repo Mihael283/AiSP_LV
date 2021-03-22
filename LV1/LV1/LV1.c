@@ -7,7 +7,7 @@ int sekv_pret( float V[], int n, float x );
 void swap(float *a, float* b);
 void heapify(float V[], int n, int i);
 void sort( float V[], int n );
-int bin_pret( float V[],int l, int n, float x );
+int bin_pret( float V[], int n, float x );
 
 void gen_arr(float V[], int n, float dg, float gg)
 {
@@ -77,20 +77,24 @@ void sort(float V[], int n) {
 
 int bin_pret(float V[], int n, float x)
 {
-	int l = 0;
-	int r = n - 1;
-	if (r >= l) {
-		int mid = l + (r - l) / 2;
+	int dg=0;
+	int gg=n-1;
+	int s=-1;
 
-		if (V[mid] == x)
-			return mid;
-
-		if (V[mid] > x)
-			return bin_pret(V, l, mid - 1, x);
-
-		return bin_pret(V, mid + 1, r, x);
+	while(dg<=gg){
+		s=(dg+gg)/2;
+		
+		if(V[s] == x){
+			return s;
+		}
+		else if (V[s]>x){
+			gg=s-1;
+		}
+		else{
+			dg=s+1;
+		}
 	}
- 
+
 	return -1;
 }
 
