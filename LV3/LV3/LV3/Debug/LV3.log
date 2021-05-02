@@ -1,0 +1,10 @@
+﻿  Source.c
+C:\Users\Mihael\Documents\GitHub\AiSP_LV\LV3\LV3\LV3\Source.c(109,12): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'time_t'
+C:\Users\Mihael\Documents\GitHub\AiSP_LV\LV3\LV3\LV3\Source.c(109,12): message : consider using '%lld' in the format string
+C:\Users\Mihael\Documents\GitHub\AiSP_LV\LV3\LV3\LV3\Source.c(109,12): message : consider using '%I64d' in the format string
+C:\Users\Mihael\Documents\GitHub\AiSP_LV\LV3\LV3\LV3\Source.c(116,9): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'time_t'
+C:\Users\Mihael\Documents\GitHub\AiSP_LV\LV3\LV3\LV3\Source.c(116,9): message : consider using '%lld' in the format string
+C:\Users\Mihael\Documents\GitHub\AiSP_LV\LV3\LV3\LV3\Source.c(116,9): message : consider using '%I64d' in the format string
+C:\Users\Mihael\Documents\GitHub\AiSP_LV\LV3\LV3\LV3\Source.c(61): warning C4715: 'pop1': not all control paths return a value
+C:\Users\Mihael\Documents\GitHub\AiSP_LV\LV3\LV3\LV3\Source.c(73): warning C4715: 'pop2': not all control paths return a value
+  LV3.vcxproj -> C:\Users\Mihael\Documents\GitHub\AiSP_LV\LV3\LV3\Debug\LV3.exe
