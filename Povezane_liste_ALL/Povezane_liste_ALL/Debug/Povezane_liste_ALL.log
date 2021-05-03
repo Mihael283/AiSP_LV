@@ -1,0 +1,5 @@
+﻿  Source.c
+C:\Users\Mihael\Documents\GitHub\AiSP_LV\Povezane_liste_ALL\Povezane_liste_ALL\Source.c(34,67): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Mihael\Documents\GitHub\AiSP_LV\Povezane_liste_ALL\Povezane_liste_ALL\Source.c(80,39): warning C4047: '=': 'node *' differs in levels of indirection from 'int'
+C:\Users\Mihael\Documents\GitHub\AiSP_LV\Povezane_liste_ALL\Povezane_liste_ALL\Source.c(135,13): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Users\Mihael\Documents\GitHub\AiSP_LV\Povezane_liste_ALL\Povezane_liste_ALL\Source.c(111): error C4703: potentially uninitialized local pointer variable 'prev' used

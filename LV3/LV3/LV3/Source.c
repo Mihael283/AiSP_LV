@@ -113,7 +113,7 @@ int main()
 	printf("Rezultat od C(%d, %d) je ", n, m);
 	povrhS(n, m);
 	vrijeme4 = clock();
-	printf(" Vrijeme za stog : %dms\n", vrijeme2 - vrijeme1);
+	printf(" Vrijeme za stog : %dms\n", vrijeme4 - vrijeme3);
 	
     return 0;
 }
