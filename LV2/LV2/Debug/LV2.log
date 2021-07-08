@@ -1,16 +1,2 @@
 ﻿  Source.c
-C:\Users\Mihael\Documents\GitHub\AiSP_LV\LV2\LV2\Source.c(79,9): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'time_t'
-C:\Users\Mihael\Documents\GitHub\AiSP_LV\LV2\LV2\Source.c(79,9): message : consider using '%lld' in the format string
-C:\Users\Mihael\Documents\GitHub\AiSP_LV\LV2\LV2\Source.c(79,9): message : consider using '%I64d' in the format string
-C:\Users\Mihael\Documents\GitHub\AiSP_LV\LV2\LV2\Source.c(82,31): warning C4305: 'function': truncation from 'double' to 'float'
-C:\Users\Mihael\Documents\GitHub\AiSP_LV\LV2\LV2\Source.c(84,9): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'time_t'
-C:\Users\Mihael\Documents\GitHub\AiSP_LV\LV2\LV2\Source.c(84,9): message : consider using '%lld' in the format string
-C:\Users\Mihael\Documents\GitHub\AiSP_LV\LV2\LV2\Source.c(84,9): message : consider using '%I64d' in the format string
-C:\Users\Mihael\Documents\GitHub\AiSP_LV\LV2\LV2\Source.c(110,9): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'time_t'
-C:\Users\Mihael\Documents\GitHub\AiSP_LV\LV2\LV2\Source.c(110,9): message : consider using '%lld' in the format string
-C:\Users\Mihael\Documents\GitHub\AiSP_LV\LV2\LV2\Source.c(110,9): message : consider using '%I64d' in the format string
-C:\Users\Mihael\Documents\GitHub\AiSP_LV\LV2\LV2\Source.c(113,33): warning C4305: 'function': truncation from 'double' to 'float'
-C:\Users\Mihael\Documents\GitHub\AiSP_LV\LV2\LV2\Source.c(115,9): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'time_t'
-C:\Users\Mihael\Documents\GitHub\AiSP_LV\LV2\LV2\Source.c(115,9): message : consider using '%lld' in the format string
-C:\Users\Mihael\Documents\GitHub\AiSP_LV\LV2\LV2\Source.c(115,9): message : consider using '%I64d' in the format string
   LV2.vcxproj -> C:\Users\Mihael\Documents\GitHub\AiSP_LV\LV2\Debug\LV2.exe

@@ -1,115 +1,115 @@
-#define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-
-
-void gen_arr(float V[], int n, float dg, float gg);
-int sekv_pret(float V[], int n, float x);
-
-
-
-struct NODE {
-	float data;
-	struct NODE* next;
-};
-typedef struct NODE node;
-
-void gen_arr(float V[], int n, float dg, float gg)
-{
-	srand((unsigned)time(NULL));
-
-	for (int i = 0; i < n; i++)
-	{
-		V[i] = dg + (float)rand() / RAND_MAX * (gg - dg + 1);
+#include<stdio.h>
+#include<stdlib.h>
+typedef struct CVOR {
+	char c;
+	struct CVOR* left;
+	struct CVOR* right;
+}cvor;
+int nadji_p(char c);
+void dodaj_p(char c);
+void preOrder(cvor* korijen);
+void inOrder(cvor* korijen);
+void postOrder(cvor* korijen);
+cvor* korijen = NULL, * nadred = NULL;
+int main(void) {
+	char polje[] = { 'M','I','H','A','E','L','S','P','A','N','O','V','I','C','\0' };
+	for (int i = 0; polje[i] != '\0'; i++) {
+		dodaj_p(polje[i]);
 	}
-
+	preOrder(korijen);
+	putchar(' ');
+	inOrder(korijen);
+	putchar(' ');
+	postOrder(korijen);
+	putchar(' ');
 }
 
-
-int sekv_pret(float V[], int n, float x)
-{
-
-	for (int i = 0; i < n; i++)
-	{
-		if (V[i] == x) {
-			return i;
-		}
-
+int nadji_p(char c) {
+	int br = 0;
+	cvor* cvor_t = korijen;
+	nadred = NULL;
+	if (cvor_t == NULL) {
+		return -1;
 	}
-	return -1;
-}
-
-
-int sekv_pret_ll(node* prvi, float x)
-{
-	node* current = prvi;
-	while (current != NULL)
-	{
-		
-		if (current->data == x)
-			return 1;
-		current = current->next;
-		
-	}
-	return 0;
-}
-
-
-
-int main(void)
-{	
-	int n = 0;
-	float* arr;
-
-    printf("Unesite broj elemenata:");
-	scanf("%d", &n);
-
-	arr = (float*)malloc(n * sizeof(float));
-
-	time_t vrijeme1, vrijeme2;
-
-
-	vrijeme1 = clock();
-	gen_arr(arr, n, 0, 10000);
-	vrijeme2 = clock();
-	printf("Vrijeme za stvaranje arraya : %dms\n", vrijeme2 - vrijeme1);
-
-	vrijeme1 = clock();
-	sekv_pret(arr, n, 101.3123231);
-	vrijeme2 = clock();
-	printf("Vrijeme za sequential search : %dms\n", vrijeme2 - vrijeme1);
-
-	
-	vrijeme1 = clock();
-	node* prvi = NULL;
-	node* current = NULL;
-	for (int k = 0; k < n; k++) {
-		if (k == 0) {
-			prvi = (node*)malloc(sizeof(node));
-			current = prvi;
+	while (1) {
+		if (cvor_t->c == c) {
+			br = 1;
 		}
 		else {
-			current->next = (node*)malloc(sizeof(node));
-			current = current->next;
-
+			nadred = cvor_t;
+			if (cvor_t->c > c) {
+				if (cvor_t->left != NULL)cvor_t = cvor_t->left;
+				else br = -1;
+			}
+			else
+				if (cvor_t->right != NULL)cvor_t = cvor_t->right;
+				else br = -1;
 		}
+		if (br == 1 || br == -1)break;
 
-		//for (int i = 1;i < n;i++)
-		//{
-			//clan->data = V[i];
-		//}
-		current->data = 0 + (float)rand() / RAND_MAX * (1000000 - 0 + 1);
 
 	}
-	current->next = NULL;
-	vrijeme2 = clock();
-	printf("Vrijeme za kreairanje povezanog popisa : %dms\n", vrijeme2 - vrijeme1);
+	return br;
+}
+void dodaj_p(char c) {
+	cvor* novi;
+	int br = 0;
+	br = nadji_p(c);
+	if (br == 1) {
+		return;
+	}
+	else {
+		novi = (cvor*)malloc(sizeof(cvor));
+		novi->c = c;
+		novi->left = novi->right = NULL;
+		if (nadred == NULL) {
+			korijen = novi;
+		}
+		else {
+			if (nadred->c > novi->c)nadred->left = novi;
+			else nadred->right = novi;
+		}
+	}
+}
+void preOrder(cvor* korijen) {
 
-	vrijeme1 = clock();
-	sekv_pret_ll(prvi, 101.21421412);
-	vrijeme2 = clock();
-	printf("Vrijeme za pretrazivanje povezanog popisa : %dms\n", vrijeme2 - vrijeme1);
+	if (korijen == NULL) {
 
-	return 0;
+		return;
+	}
+	else {
+
+		printf("%c", korijen->c);
+		preOrder(korijen->left);
+		preOrder(korijen->right);
+	}
+
+}
+void inOrder(cvor* korijen) {
+
+	if (korijen == NULL) {
+
+		return;
+	}
+	else {
+
+		inOrder(korijen->left);
+		printf("%c", korijen->c);
+		inOrder(korijen->right);
+	}
+
+}
+void postOrder(cvor* korijen) {
+
+	if (korijen == NULL) {
+
+		return;
+	}
+	else {
+
+		postOrder(korijen->left);
+		postOrder(korijen->right);
+		printf("%c", korijen->c);
+	}
+
 }
